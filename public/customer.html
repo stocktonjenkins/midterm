@@ -12,30 +12,25 @@
         <h1>Current Products</h1>
         <div class="form">
             <div v-for="product in products" class="addProduct">
-                <div v-for="product in products" class="addProduct">
-                    <div class="card">
-                        <img class="url-image" v-bind:src="product.url">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ product.name }}</h5>
-                            <p><i>${{ product.price }}</i></p>
-                        </div>
-                        <input type="checkbox" class="select-product" v-model="product.selected" align="right">
-                    </div>
-                </div>
-                <br>
-                <button @click="submitOrder()">Submit Order</button>
-            </div>
-        </div>
-        <h1>Shopping Cart</h1>
-        <div v-for="product in selectedProducts" class="addProduct">
-            <div v-for="product in products" class="addProduct">
                 <div class="card">
                     <img class="url-image" v-bind:src="product.url">
                     <div class="card-body">
                         <h5 class="card-title">{{ product.name }}</h5>
                         <p><i>${{ product.price }}</i></p>
-                        <br>
                     </div>
+                    <input type="checkbox" class="select-product" v-model="product.selected">
+                </div>
+            </div>
+            <button @click="submitOrder()">Submit Order</button>
+        </div>
+        <h1>Shopping Cart</h1>
+        <div v-for="product in selectedProducts" class="addProduct">
+            <div class="card">
+                <img class="url-image" v-bind:src="product.url">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p><i>${{ product.price }}</i></p>
+                    <br>
                 </div>
             </div>
         </div>

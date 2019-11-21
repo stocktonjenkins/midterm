@@ -38,9 +38,17 @@ let app = new Vue({
             catch (error) {
                 console.log(error);
             }
+        },
+        updateSelectedProducts() {
+            console.log("selected products:", this.selectedProducts);
+            this.selectedProducts = [];
+            this.products.forEach(product => {
+                product.selected = false;
+            });
         }
     },
     created() {
         this.getProducts();
+        this.updateSelectedProducts();
     }
 });
