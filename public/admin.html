@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css" />
+    <title>Midterm: Administration Page</title>
+</head>
+
+<body>
+    <div id="admin" class="content">
+        <h1>Store Management Interface</h1>
+        <a href="/customer.html">Customer Page</a>
+        <h3>Add A Product</h3>
+        <div class="form">
+            <input class="addProduct" v-model="productName" type="text" placeHolder="Product Name" />
+            <br>
+            <input class="addProduct" v-model="productPrice" type="number" placeHolder="Price" />
+            <br>
+            <input class="addProduct" v-model="productUrl" type="text" placeHolder="Image URL" />
+            <br>
+            <button class="addProduct" @click="addProduct">Add Product</button>
+        </div>
+        <h1>Current Products</h1>
+        <div v-if="products.length == 0">
+            <i>There are no products to display.</i>
+        </div>
+        <div v-for="product in products" class="addProduct">
+            <div class="card">
+                <img class="url-image" v-bind:src="product.url">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p><i>${{product.price}}</i></p>
+                    <p><i>Number of Orders: {{ product.orders }}</i></p>
+                    <button class="close" v-on:click="deleteProduct(product)">x</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script src="/admin.js"></script>
+</body>
+
+</html>

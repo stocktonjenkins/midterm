@@ -1,0 +1,50 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <title>Midterm: Customer Page</title>
+</head>
+
+<body>
+    <div id="app" class="content">
+        <h1>Shopping Interface</h1>
+        <h1>Current Products</h1>
+        <div class="form">
+            <div v-for="product in products" class="addProduct">
+                <div v-for="product in products" class="addProduct">
+                    <div class="card">
+                        <img class="url-image" v-bind:src="product.url">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p><i>${{ product.price }}</i></p>
+                        </div>
+                        <input type="checkbox" class="select-product" v-model="product.selected" align="right">
+                    </div>
+                </div>
+                <br>
+                <button @click="submitOrder()">Submit Order</button>
+            </div>
+        </div>
+        <h1>Shopping Cart</h1>
+        <div v-for="product in selectedProducts" class="addProduct">
+            <div v-for="product in products" class="addProduct">
+                <div class="card">
+                    <img class="url-image" v-bind:src="product.url">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.name }}</h5>
+                        <p><i>${{ product.price }}</i></p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/admin.html">Admin Page</a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js" integrity="sha256-mpnrJ5DpEZZkwkE1ZgkEQQJW/46CSEh/STrZKOB/qoM=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.7/vue.js" integrity="sha256-g+Q8DFAmG5+eyRPSydX0LY4TfjsL11XSDrIGerbbEdA=" crossorigin="anonymous"></script>
+    <script src="customer.js"></script>
+</body>
+
+</html>

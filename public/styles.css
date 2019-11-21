@@ -1,0 +1,121 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  background: #fff;
+  padding: 0px;
+  margin: 0px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  background-color: #f1f1f1;
+  width: 23rem;
+}
+
+.url-image {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: auto;
+  margin-top: 16px;
+  display: inline-block;
+}
+
+/* Header */
+
+.header {
+  display: flex;
+  padding: 20px 100px 0px 100px;
+  background-color: #5BDEFF;
+  color: #fff;
+}
+
+.title {
+  margin-top: 10px;
+}
+
+.title h1,
+.title h2 {
+  margin: 0px;
+}
+
+.title h1 {
+  border-top: 1px solid #000;
+}
+
+/* Footer */
+
+.footer {
+  height: 50px;
+  padding: 20px 100px 0px 100px;
+}
+
+.footer a {
+  color: #000;
+}
+
+/* Content */
+
+.content {
+  padding: 20px 100px 0px 100px;
+}
+
+
+@media only screen and (min-width: 1024px) {
+  .image-gallery {
+    column-count: 4;
+  }
+}
+
+/* Masonry on medium-sized screens */
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .image-gallery {
+    column-count: 3;
+  }
+}
+
+/* Masonry on small screens */
+
+@media only screen and (max-width: 767px) and (min-width: 540px) {
+  .image-gallery {
+    column-count: 2;
+  }
+}
+
+.close {
+  width: 25px;
+  height: 25px;
+  opacity: 0.3;
+  text-align: center;
+}
+.select-product {
+  width: 25px;
+  height: 25px;
+  text-align: right;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before,
+.close:after {
+  height: 15px;
+  width: 2px;
+  background-color: #333;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.addProduct {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
